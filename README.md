@@ -19,7 +19,7 @@ Step 3: Install the Nuget package, with the command `Install-Package GitVersion.
 
 Step 4: Do some git commits, and build your project. And then, congratulations, you can see the Gitversion Task has worked.
 
-Setp 5: As to use some advanced featrues, you could create a gitversion.yml file in your local. Just look like below codes:
+Setp 5: As to use some advanced featrues, you could create a gitversion.yml file in your local (btw, you also can use Command Line tool with inital command to inital a new gitversion.yml). Just look like below codes:
 
 ```next-version: 8.1.0
 assembly-versioning-scheme: MajorMinorPatch

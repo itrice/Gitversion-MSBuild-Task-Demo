@@ -1,6 +1,6 @@
 Gitversion MSBuild Task Demo
 
-this demo tells you how to use Gitversion to help Semver with Conventional Commit.
+this demo tells you how to use Gitversion MSBuild Task to accomplish Semver with the Conventional Commit.
 
 ## Working with MSBuild Task
 
@@ -45,4 +45,11 @@ ignore:
   commits-before: 
 merge-message-formats: {}
 update-build-number: true
+```
+This is a partial of the whole Gitversion.yml, and you didn't need to write the whole, just write you needed is okay for running. 
+The fellow lines that I had changed is for support the Conventional Commit Rules.
+```
+major-version-bump-message: "^(BREAKING CHANGE)(\\([\\w\\s-]*\\))?:"
+minor-version-bump-message: "^(feat)(\\([\\w\\s-]*\\))?:"
+patch-version-bump-message: "^(build|chore|ci|docs|fix|perf|refactor|revert|style|test)(\\([\\w\\s-]*\\))?:"
 ```

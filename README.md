@@ -17,6 +17,32 @@ Step 2: Initial git repository in the project folder.
 
 Step 3: Install the Nuget package, with the command `Install-Package GitVersion.MsBuild -Version 5.10.3`
 
-Step 4: Do some git commits, and then you can build your project. And then, you can see the Gitversion Task has worked.
+Step 4: Do some git commits, and build your project. And then, congratulations, you can see the Gitversion Task has worked.
 
-Setp 5: As you 
+Setp 5: As to use some advanced featrues, you could create a gitversion.yml file in your local. Just look like below:
+
+```next-version: 8.1.0
+assembly-versioning-scheme: MajorMinorPatch
+assembly-file-versioning-scheme: MajorMinorPatch
+assembly-informational-format: '{Major}.{Minor}.{Patch}'
+commit-date-format: yyMMddTHHmmss
+mode: ContinuousDeployment
+increment: Inherit
+continuous-delivery-fallback-tag: ci
+tag-prefix: '[vV]'
+major-version-bump-message: "^(BREAKING CHANGE)(\\([\\w\\s-]*\\))?:"
+minor-version-bump-message: "^(feat)(\\([\\w\\s-]*\\))?:"
+patch-version-bump-message: "^(build|chore|ci|docs|fix|perf|refactor|revert|style|test)(\\([\\w\\s-]*\\))?:"
+no-bump-message: '\+semver:\s?(none|skip)'
+legacy-semver-padding: 4
+build-metadata-padding: 4
+commits-since-version-source-padding: 4
+tag-pre-release-weight: 60000
+commit-message-incrementing: Enabled
+
+ignore:
+  sha: []
+  commits-before: 
+merge-message-formats: {}
+update-build-number: true
+```
